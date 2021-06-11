@@ -18,11 +18,9 @@ alias ns='f(){ kubectl config set-context $(kubectl config current-context) --na
 
 ## Helm
 
-```
-# Helm stores the yaml files which result from the chart in a secret with a name like
-# sh.helm.release.v1.MYAPP.v1 in the target namespace. The content is compressed and
-# double base64 encoded. The following commands extract the yaml from helm chart:
+Helm stores the yaml files which result from the chart in a secret with a name like sh.helm.release.v1.MYAPP.v1 in the target namespace. The content is compressed and double base64 encoded. The following commands extract the full json or the resulting yaml, respectively, from helm chart.
 
+```
 #==== helm2json ====
 # - parameters: 1) chart name 2) version; see name and current version with helm list
 # - extracts the charts meta data and base64 encoded raw data as readable json
@@ -41,15 +39,16 @@ function helm2yaml
 ```
 
 ## Misc
-```
-# always handy if working with json files - this formats it readable:
-alias prettyjson='python3 -m json.tool'
+Linting Yaml or Json with a third party like [yaml|json]lint.com leaves always some concern regarding data safety. So  I wrote my own linter app for yaml, json and xml and use it from command line with curl. If you'd like to use it, feel free to run your own copy (it's dockered). This keeps you on the safe side and the load on my web service low.
 
+```
 # linting documents with lint trilogy; run an own instance if you like, it's dockered
 # - result is given in json; change last part of url to csv if you need the result tabular
 function yamllint { curl -X POST -d "data=$(cat $1)" https://www.lint-trilogy.com/lint/yaml/json ; }
 function jsonlint { curl -X POST -d "data=$(cat $1)" https://www.lint-trilogy.com/lint/json/json ; }
 function  xmllint { curl -X POST -d "data=$(cat $1)" https://www.lint-trilogy.com/lint/xml/json  ; }
 
+# always handy if working with json files - this formats it readable:
+alias prettyjson='python3 -m json.tool'
 ```
 
