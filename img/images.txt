@@ -1,0 +1,6 @@
+meta:
+  about: list of images
+images:
+  postit_640px.jpg:
+    src: https://unsplash.com/@sigmund
+    lic: https://unsplash.com/license
