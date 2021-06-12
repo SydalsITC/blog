@@ -1,7 +1,7 @@
 
 # k8s and helm cheat sheet
 
-Here's some of the commands I usually place in my ```.bash_aliases``` for making life easier with kubernetes and helm.
+<img src="img/postit_640px.jpg" width="100" align="right"/>Here's some of the commands I usually place in my ```.bash_aliases``` for making life easier with kubernetes and helm.
 
 ## Kubernetes
 
