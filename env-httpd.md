@@ -98,13 +98,13 @@ spec:
 The http server is now available inside the cluster at env.kube-system.svc.cluster.local and provides the cenral configuration as yaml like this:
 ```
 stage: "demo"
-  name: "rancher-demo.mycompany.tld"
-  contact:
-    mail: "k8s@servicedesk.mycompany.tld"
-    phone: "123 456"
+name: "rancher-demo.mycompany.tld"
+contact:
+  mail: "k8s@servicedesk.mycompany.tld"
+  phone: "123 456"
 ```
 This is just a small example. The yaml may provide more information if needed like what ticket system to use if there's a problem. Or one may add other files with special configuration, one for each applicatiaon.
 
 ## Downsides
-A small disadvantage is that once you update the configmap, the new data doesn't get visible in the http server until you restart the pods manually. To get around this, a helm chart for this deployment would help, where helm generates a checksum on the configmap and stores this in the deployment. This ensures that helm restarts the pods if the "wwwroot" config changes.
+A small disadvantage is that once you update the configmap, the new data doesn't get visible in the http server until you restart the pods manually. To get around this, a helm chart for this deployment would help, where helm generates a _checksum_ on the configmap and stores this in the deployment. This ensures that helm restarts the pods if the "wwwroot" config changes.
 
