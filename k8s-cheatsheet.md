@@ -39,7 +39,7 @@ function helm2yaml
 ```
 
 ## Misc
-Linting Yaml or Json with a third party like [yaml|json]lint.com leaves always some concern regarding data safety. So  I wrote my own linter app for yaml, json and xml and use it from command line with curl. If you'd like to use it, feel free to run your own copy (it's dockered). This keeps you on the safe side and the load on my web service low.
+Linting Yaml or Json with a third party like [yaml|json]lint.com leaves always some concern regarding data safety. So  I wrote my own [linter app](https://github.com/berndkuennen/lint_trilogy) for yaml, json and xml and use it from command line with curl. If you'd like to use it, feel free to run your own copy (it's dockered). This keeps you on the safe side and the load on my web service low.
 
 ```
 # linting documents with lint trilogy; run an own instance if you like, it's dockered
