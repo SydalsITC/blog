@@ -77,7 +77,7 @@ type: Opaque
 data:
   libfaketime.so.1: f0VMRgIBAQAAAAAAAAAAAAMAPgABAA...
 ```
-## A secre volume
+## A secret volume
 The secret gets mounted as volume into te container. That way the libary gets provided before starting
 the container so that LD_PRELOAD can easily load it.
 
@@ -108,9 +108,12 @@ Fri Mar 29 21:37:50 UTC 2024
 Fri Mar 29 21:37:55 UTC 2024
 
 ```
-
 A example deployment may be found in the file [backToTheFuture/deployment.yaml](backToTheFuture/deployment.yaml).
-The [accompanying shell script](backToTheFuture/generate_secret.sh) generates the yaml for secret, provided that the libfaketime library is installed.
+The [accompanying shell script](backToTheFuture/generate_secret.sh) generates the yaml for secret, provided that
+the libfaketime library is installed.
+
+Due to that a secret is visible only in its own namespace, you'll need a "libfaketime secret" per namespace if
+you want to use this trick over the whole cluster.
 
 ## Summary
 Shifting a Kubernetes cluster in time is not desirable. If you need to shift a container in time, you may
