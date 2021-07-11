@@ -1,0 +1,36 @@
+---
+# starts a simple container with sleep loop
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: martymcfly
+spec:
+  selector:
+    matchLabels:
+      app: martymcfly
+  template:
+    metadata:
+      labels:
+        app: martymcfly
+    spec:
+      containers:
+        - name: backintime
+          image: ubuntu:18.04
+          imagePullPolicy: IfNotPresent
+          command: [ /bin/bash ]
+          args: [ "-c", "while true; do echo; date; sleep 5; done" ]
+          env:
+            - name: "LD_PRELOAD"
+              value: "/usr/lib64/faketime/libfaketime.so.1"
+            - name: "FAKETIME_DONT_FAKE_MONOTONIC"
+              value: "1"
+            - name: "FAKETIME"
+              value: "+1000d"
+          volumeMounts:
+            - mountPath: "/usr/lib64/faketime"
+              name: faketime-volume
+              readOnly: true
+      volumes:
+        - name: faketime-volume
+          secret:
+            secretName: faketime-volume
