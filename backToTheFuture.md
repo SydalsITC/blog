@@ -110,7 +110,7 @@ Fri Mar 29 21:37:55 UTC 2024
 ```
 
 A example deployment may be found in the file [backToTheFuture/deployment.yaml](backToTheFuture/deployment.yaml).
-The accompanying shell script generates the yaml for secret, provided that the libfaketime library is installed.
+The [accompanying shell script](backToTheFuture/generate_secret.sh) generates the yaml for secret, provided that the libfaketime library is installed.
 
 ## Summary
 Shifting a Kubernetes cluster in time is not desirable. If you need to shift a container in time, you may
