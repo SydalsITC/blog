@@ -8,11 +8,11 @@ Proper encryption with TLS is a science itself and can be quite tricky. Therefor
 Because it's no everyday business to me, I always have to lookup the right commands and their arguments. So finally I decided to write my own [SSL cheat sheet](posts/ssl-cheat-sheet.md) and am glad to share it.
 
 ## Back To The future
-Moving an application is easy if it's installed in a VM - you just manipulate the VMs clock. In a Kubernetes cluster, all Nodes must stay in sync on the same time, and thus the applications running in the containers also all share the same time. Moving a node in time would mess up the cluster, and moving a single container seems impossible - but it gets easy, once you get your hands on a [flux capacitor](backToTheFuture.md).
+Moving an application is easy if it's installed in a VM - you just manipulate the VMs clock. In a Kubernetes cluster, all Nodes must stay in sync on the same time, and thus the applications running in the containers also all share the same time. Moving a node in time would mess up the cluster, and moving a single container seems impossible - but it gets easy, once you get your hands on a [flux capacitor](posts/backToTheFuture.md).
 
 ## Say my name
-The example at [env-httpd.md](env-httpd.md) shows a small http server for providing central information like stage name or admin contact for your applications and developers with just a small nginx deployment and a configmap.
+The example at [env-httpd.md](posts/env-httpd.md) shows a small http server for providing central information like stage name or admin contact for your applications and developers with just a small nginx deployment and a configmap.
 
 ## Cheat sheet for kubernetes admins
 
-<img src="img/postit_640px.jpg" width="100" align="right"/>And for those on the path to become one. Make your life easier with some aliases and functions in your bashrc or bash_aliasess file (depending on your distribution). You'll find some handy examples in [k8s-cheatsheet.md](k8s-cheatsheet.md).
+<img src="img/postit_640px.jpg" width="100" align="right"/>And for those on the path to become one. Make your life easier with some aliases and functions in your bashrc or bash_aliasess file (depending on your distribution). You'll find some handy examples in [k8s-cheatsheet.md](posts/k8s-cheatsheet.md).
