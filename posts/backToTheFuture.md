@@ -108,8 +108,8 @@ Fri Mar 29 21:37:50 UTC 2024
 Fri Mar 29 21:37:55 UTC 2024
 
 ```
-A example deployment may be found in the file [backToTheFuture/deployment.yaml](backToTheFuture/deployment.yaml).
-The [accompanying shell script](backToTheFuture/generate_secret.sh) generates the yaml for secret, provided that
+A example deployment may be found in the file [backToTheFuture/deployment.yaml](../backToTheFuture/deployment.yaml).
+The [accompanying shell script](../backToTheFuture/generate_secret.sh) generates the yaml for secret, provided that
 the libfaketime library is installed.
 
 Due to that a secret is visible only in its own namespace, you'll need a "libfaketime secret" per namespace if
