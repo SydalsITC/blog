@@ -21,7 +21,7 @@ Surprisingly, this was uncomplicated and done with a couple of minutes. So, not 
 dockerfile, based on the latest Ubuntu image. It just pulls the updates and python3 with pip, so that the latter can install
 the esptool.
 
-`
+```
 # Define base image; Ubuntu is always a good choice
 FROM ubuntu:latest
 
@@ -33,8 +33,7 @@ RUN apt-get -y install python3-pip
 
 # Use pip to install esptool.py
 RUN pip install esptool
-
-`
+```
 
 I've built my image with this line:
 `docker build -t esptool:1.1  - <Dockerfile`
