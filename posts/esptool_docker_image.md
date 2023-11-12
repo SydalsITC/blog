@@ -17,7 +17,7 @@ proper cleanup after all is done: using the esptool.py from within a docker imag
 
 ## Building the docker image
 
-Surprisingly, this was uncomplicated and done with a couple of minutes. So, not to waste time, here's the simple but working
+Surprisingly, this was uncomplicated and done within a couple of minutes. So, not to waste time, here's the simple but working
 dockerfile, based on the latest Ubuntu image. It just pulls the updates and python3 with pip, so that the latter can install
 the esptool.
 
@@ -76,7 +76,7 @@ Advantages:
 
 Disadvantages:
 * You need [Docker](https://www.docker.com/) installed and the daemon running.
-* This way needs more (temporary) diskspace, as the image might grow to 505 MB.
+* This way needs more (temporary) diskspace, as the image might grow to about 500 MB.
 
 ## Sonoff POW Elite
 A last word about the above mentioned Sonoff POW Elite, often also refered to as POWR316D. I tried to
@@ -96,10 +96,10 @@ invalid header: 0x2e000000
 Research on the web didn't show much hints what could be the cause. So I decided to follow a
 recommendation Theo Arends gives for first time flashing a device: use the *factory binaries*.
 
-Simple but effectiv, it worked. After flashing the default factory firmware, the Sonoff device
-came up with a wifi access point and I was able to first configure and after that update it using
-the built-in *ota update* feature.
-
+Simple but effective, it worked. After flashing the
+[v12.0.2 vanilla english factory firmware](https://ota.tasmota.com/tasmota32/release-12.0.2/tasmota32.factory.bin),
+the Sonoff device came up with a wifi access point and I was able to first configure and after
+that update it, using the built-in *ota update* feature.
 
 
 ## Links
