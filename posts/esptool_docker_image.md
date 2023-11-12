@@ -36,6 +36,7 @@ RUN pip install esptool
 ```
 
 I've built my image with this line:
+
 `docker build -t esptool:1.1  - <Dockerfile`
 
 
