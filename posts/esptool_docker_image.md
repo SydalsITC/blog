@@ -47,6 +47,8 @@ it in a docker container. Please refer to the documentation of your device and p
 Second, make sure that your serial programmer is connected properly to a USB port and it's visible to the system.
 Usually it should be /dev/ttyUSB0 oder /dev/ttyUSB1.
 
+(I'm not adding a disclaimer here that you should not program your Sonoff device while it's connected to main power because I reckon you're smart enough to know that of course it should be disconencted for that.)
+
 Third, place the firmware you want to flash in the current directory. Once you have built the image, connect your
 ESP device and put it into download mode. With the following command you may check if everything works as desired:
 
@@ -66,7 +68,7 @@ the binary to the ESP board:
 
 Once everything is done, you just have to remove the image again:
 
-`docker rmi esptool:1.1`
+`docker rmi esptool:1.0`
 
 ## Pro/contra
 
